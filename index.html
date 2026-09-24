@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Warkop Si Bungsu | WARSIBU</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         POPUP VIDEO PROMO
+    ========================== -->
+
+    <div id="popupPromo" class="popup-promo">
+
+        <div class="promo-box">
+
+            <button
+                type="button"
+                class="tutup-promo"
+                onclick="
+                    document.getElementById('popupPromo').style.display='none';
+                    document.getElementById('videoPromo').pause();
+                "
+            >
+                ×
+            </button>
+
+
+            <h2>
+                🔥 PROMO WARSIBU 🔥
+            </h2>
+
+
+            <video id="videoPromo" controls loop>
+                <source src="video/promo.mp4" type="video/mp4">
+            </video>
+
+
+            <p>
+                Nongkrong hemat, harga bersahabat!
+            </p>
+
+
+            <button
+                type="button"
+                class="lihat-menu"
+                onclick="
+                    document.getElementById('popupPromo').style.display='none';
+                    document.getElementById('videoPromo').pause();
+                "
+            >
+                Lihat Menu
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>
+            ☕ WARKOP SI BUNGSU
+        </h1>
+
+        <p>
+            WARSIBU — Tempat nongkrong mahasiswa UNINDRA
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         BANNER PROMO
+    ========================== -->
+
+    <section class="promo-banner">
+
+        <div class="promo-text">
+
+            <span class="promo-label">
+                🔥 PROMO SPESIAL HARI INI
+            </span>
+
+
+            <h2>
+                DISKON 10%
+            </h2>
+
+
+            <p>
+                Nikmati semua menu WARSIBU
+                dengan harga lebih hemat!
+            </p>
+
+
+            <small>
+                *Diskon otomatis saat checkout
+            </small>
+
+        </div>
+
+
+        <div class="promo-icon">
+            ☕
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu">
+
+        <h2>
+            Menu Kami
+        </h2>
+
+
+
+        <!-- =========================
+             PILIH KATEGORI
+        ========================== -->
+
+        <div class="kategori">
+
+            <button
+                type="button"
+                onclick="tampilkanKategori('makanan')"
+            >
+                🍜 Makanan
+            </button>
+
+
+            <button
+                type="button"
+                onclick="tampilkanKategori('minuman')"
+            >
+                🥤 Minuman
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             PRODUK
+             Card dibuat otomatis oleh JS
+        ========================== -->
+
+        <div class="menu-container">
+
+            <div
+                id="menuMakanan"
+                class="menu-item"
+            >
+            </div>
+
+
+            <div
+                id="menuMinuman"
+                class="menu-item"
+            >
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         KERANJANG
+    ========================== -->
+
+    <section class="keranjang">
+
+        <h2>
+            🛒 Keranjang
+        </h2>
+
+
+        <div id="daftarKeranjang">
+
+            <p>
+                Belum ada pesanan.
+            </p>
+
+        </div>
+
+
+
+        <!-- RINGKASAN HARGA -->
+
+        <div class="ringkasan-harga">
+
+
+            <div class="baris-harga">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+
+            <div class="baris-harga diskon">
+
+                <span>
+                    Diskon 10%
+                </span>
+
+                <strong id="diskon">
+                    -Rp0
+                </strong>
+
+            </div>
+
+
+
+            <div class="garis-total"></div>
+
+
+
+            <div class="baris-harga total-bayar">
+
+                <span>
+                    Total Bayar
+                </span>
+
+                <strong id="total">
+                    Rp0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            type="button"
+            onclick="bayar()"
+        >
+            Bayar Sekarang
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         POPUP PEMBAYARAN
+    ========================== -->
+
+    <div
+        id="popupPembayaran"
+        class="popup"
+    >
+
+        <div class="popup-box">
+
+
+            <!-- PILIH METODE PEMBAYARAN -->
+
+            <div
+                id="pilihanPembayaran"
+            >
+
+                <h2>
+                    Pilih Metode Pembayaran
+                </h2>
+
+                <p>
+                    Silakan pilih metode pembayaran
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="pilihPembayaran('Tunai')"
+                >
+                    💵 Tunai
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="pilihPembayaran('QRIS')"
+                >
+                    📱 QRIS
+                </button>
+
+            </div>
+
+
+
+            <!-- PROSES PEMBAYARAN -->
+
+            <div
+                id="prosesPembayaran"
+                style="display: none;"
+            >
+
+                <div class="loading-circle"></div>
+
+
+                <h2>
+                    Silakan ke kasir
+                </h2>
+
+
+                <p id="teksProsesPembayaran">
+                    Silakan ke kasir untuk melakukan pembayaran.
+                </p>
+
+            </div>
+
+
+
+            <!-- BERHASIL -->
+
+            <div
+                id="pembayaranBerhasil"
+                style="display: none;"
+            >
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+
+                <h2>
+                    Pembayaran Berhasil!
+                </h2>
+
+
+                <p>
+                    Terima kasih sudah membeli
+                    di Warkop Si Bungsu ☕
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="tutupPembayaran()"
+                >
+                    Selesai
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         AUDIO PEMBAYARAN
+    ========================== -->
+
+    <audio id="audioSukses">
+
+        <source
+            src="audio/sukses.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="./script.js"></script>
+
+
+</body>
+
+</html>
