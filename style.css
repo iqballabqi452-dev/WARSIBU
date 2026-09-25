@@ -1,0 +1,1572 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f1e8, #eee3d0);
+    color: #2b2118;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #3b2618, #6b4226);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.menu h2 {
+    display: inline-block;
+    margin: 0 0 25px;
+    font-size: 30px;
+    color: #3b2618;
+}
+
+.menu h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background-color: #6b4226;
+    border-radius: 10px;
+    margin: 10px auto 0;
+}
+
+
+/* =========================
+   KATEGORI MENU
+========================= */
+
+.kategori {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0 40px;
+    flex-wrap: wrap;
+}
+
+.kategori button {
+    width: 190px;
+    height: 65px;
+    padding: 0;
+    background-color: #6b4226;
+    color: white;
+    border: 3px solid #8b5a38;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
+}
+
+.kategori button:hover {
+    background-color: #6b4226;
+    color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kategori button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   PRODUK
+   SEMBUNYI SAAT AWAL
+========================= */
+
+.menu-item {
+    display: none;
+}
+
+
+/* =========================
+   TEMPAT PRODUK
+========================= */
+
+.menu-container {
+    width: 100%;
+}
+
+#menuMakanan,
+#menuMinuman {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background-color: white;
+
+    width: 250px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
+
+    animation: muncul 0.5s ease;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   GAMBAR
+========================= */
+
+.card img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   TEKS
+========================= */
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #3b2618;
+}
+
+.card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.harga {
+    font-weight: bold;
+    font-size: 19px;
+    color: #6b4226;
+}
+
+
+/* =========================
+   SEMUA BUTTON
+========================= */
+
+button {
+    background: linear-gradient(135deg, #6b4226, #4d2e1b);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   ANIMASI
+========================= */
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   KERANJANG
+========================= */
+
+.keranjang {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 20px auto 60px;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.keranjang h2 {
+    margin-top: 0;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #3b2618;
+}
+
+.keranjang h3 {
+    text-align: right;
+
+    font-size: 21px;
+
+    border-top: 2px solid #eee3d0;
+
+    padding-top: 18px;
+
+    color: #3b2618;
+}
+
+
+/* =========================
+   ITEM KERANJANG
+========================= */
+
+.item-keranjang {
+    background-color: #f7f2e9;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin: 10px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.item-keranjang>div:first-child {
+    text-align: left;
+}
+
+.item-keranjang>div:last-child {
+    text-align: right;
+}
+
+
+/* =========================
+   PILIHAN SUHU
+========================= */
+
+.pilihan-suhu {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #5a4635;
+}
+
+.pilihan-suhu select {
+    margin-left: 5px;
+
+    padding: 5px 8px;
+
+    border: 1px solid #6b4226;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #3b2618;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   TOMBOL HAPUS
+========================= */
+
+.item-keranjang button {
+    display: block;
+
+    margin: 8px 0 0 auto;
+
+    padding: 6px 10px;
+
+    font-size: 12px;
+
+    background-color: #9b3d2f;
+}
+
+.item-keranjang button:hover {
+    background-color: #7d2f24;
+}
+
+
+/* =========================
+   BAYAR
+========================= */
+
+.keranjang>button {
+    display: block;
+
+    margin: 20px auto 0;
+
+    font-size: 16px;
+
+    padding: 13px 28px;
+}
+
+
+/* =========================
+   POPUP PEMBAYARAN
+========================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+}
+
+.popup-box {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+
+    background-color: white;
+
+    padding: 40px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    animation: popupMuncul 0.4s ease;
+}
+
+@keyframes popupMuncul {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+#loadingPembayaran h2 {
+    margin-bottom: 10px;
+    color: #3b2618;
+}
+
+#loadingPembayaran p {
+    color: #666;
+}
+
+.loading-circle {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 25px;
+
+    border: 6px solid #e5e5e5;
+
+    border-top: 6px solid #6b4226;
+
+    border-radius: 50%;
+
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   PEMBAYARAN BERHASIL
+========================= */
+
+#pembayaranBerhasil {
+    display: none;
+}
+
+.checkmark {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 20px;
+
+    background: linear-gradient(135deg,
+            #4caf50,
+            #318a35);
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 52px;
+
+    font-weight: bold;
+
+    animation: checkMuncul 0.5s ease;
+}
+
+@keyframes checkMuncul {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#pembayaranBerhasil h2 {
+    margin-bottom: 10px;
+    color: #3b2618;
+}
+
+#pembayaranBerhasil p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   POPUP VIDEO PROMO
+========================= */
+
+.popup-promo {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.78);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+
+    padding: 20px;
+}
+
+.promo-box {
+    position: relative;
+
+    width: 90%;
+    max-width: 650px;
+
+    background: linear-gradient(135deg,
+            #ffffff,
+            #f8f1e7);
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+
+    animation: promoMuncul 0.5s ease;
+}
+
+.promo-box h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #3b2618;
+
+    font-size: 24px;
+}
+
+.promo-box video {
+    width: 100%;
+
+    max-height: 350px;
+
+    border-radius: 14px;
+
+    display: block;
+
+    background-color: black;
+}
+
+.promo-box p {
+    margin: 18px 0;
+
+    color: #5a4635;
+
+    font-size: 16px;
+}
+
+.tutup-pembayaran {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: rgb(46, 24, 24) !important;
+    color: white !important;
+
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 35px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   TUTUP PROMO
+========================= */
+
+.tutup-promo {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+
+    background-color: #3b2618;
+
+    font-size: 25px;
+
+    line-height: 36px;
+}
+
+.tutup-promo:hover {
+    background-color: #4d2e1b;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   LIHAT MENU
+========================= */
+
+.lihat-menu {
+    padding: 13px 28px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   ANIMASI PROMO
+========================= */
+
+@keyframes promoMuncul {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .menu {
+        padding: 35px 15px;
+    }
+
+    .menu h2 {
+        font-size: 27px;
+    }
+
+    .kategori {
+        gap: 10px;
+    }
+
+    .kategori button {
+        min-width: 130px;
+        padding: 12px 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .keranjang {
+        width: 92%;
+        padding: 22px;
+    }
+
+    .item-keranjang {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .item-keranjang>div:last-child {
+        width: 100%;
+        text-align: left;
+    }
+
+    .item-keranjang button {
+        margin-left: 0;
+    }
+
+    .promo-box {
+        padding: 22px 18px;
+    }
+
+    .promo-box h2 {
+        font-size: 20px;
+    }
+}
+
+/* =========================
+   BANNER PROMO
+========================= */
+
+.promo-banner {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto 10px;
+    padding: 30px 40px;
+
+    background: linear-gradient(135deg,
+            #6b4226,
+            #3b2618);
+
+    color: white;
+    border-radius: 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    animation: bannerMuncul 0.7s ease;
+}
+
+
+.promo-text {
+    text-align: left;
+}
+
+
+.promo-label {
+    display: inline-block;
+
+    background-color: #f5c542;
+    color: #3b2618;
+
+    padding: 7px 14px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.promo-banner h2 {
+    margin: 5px 0;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+
+.promo-banner p {
+    margin: 8px 0;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+
+.promo-banner small {
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+
+.promo-icon {
+    font-size: 100px;
+
+    opacity: 0.9;
+
+    transform: rotate(-10deg);
+
+    animation: kopiGoyang 3s ease-in-out infinite;
+}
+
+
+/* ANIMASI BANNER */
+
+@keyframes bannerMuncul {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes kopiGoyang {
+
+    0%,
+    100% {
+        transform: rotate(-10deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(5deg) translateY(-8px);
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .promo-banner {
+        padding: 25px;
+    }
+
+    .promo-banner h2 {
+        font-size: 32px;
+    }
+
+    .promo-banner p {
+        font-size: 14px;
+    }
+
+    .promo-icon {
+        font-size: 65px;
+    }
+
+    /* =========================
+   POLISH UI WASIBU
+========================= */
+
+    /* BACKGROUND */
+    body {
+        background:
+            radial-gradient(circle at 10% 10%, rgba(139, 90, 56, 0.10), transparent 25%),
+            radial-gradient(circle at 90% 20%, rgba(107, 66, 38, 0.10), transparent 25%),
+            linear-gradient(135deg, #f8f3eb, #eadbc7);
+    }
+
+
+    /* =========================
+   HEADER LEBIH MODERN
+========================= */
+
+    header {
+        padding: 45px 20px 40px;
+
+        background:
+            linear-gradient(135deg,
+                #2d1b11,
+                #5a351f,
+                #7a4b2b);
+
+        position: relative;
+        overflow: hidden;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.22);
+    }
+
+    header::after {
+        content: "☕";
+
+        position: absolute;
+        right: 7%;
+        bottom: -35px;
+
+        font-size: 150px;
+
+        opacity: 0.07;
+
+        transform: rotate(-15deg);
+    }
+
+    header h1 {
+        font-size: 42px;
+        letter-spacing: 1px;
+
+        position: relative;
+        z-index: 1;
+    }
+
+    header p {
+        margin-top: 12px;
+
+        font-size: 17px;
+
+        opacity: 0.9;
+
+        position: relative;
+        z-index: 1;
+    }
+
+
+    /* =========================
+   POPUP PEMBAYARAN
+========================= */
+
+    .popup-box {
+        position: relative;
+
+        border: 1px solid rgba(107, 66, 38, 0.12);
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.35);
+
+        animation: popupModern 0.35s ease;
+    }
+
+
+    /* JUDUL PEMBAYARAN */
+
+    #pilihanPembayaran h2 {
+        color: #3b2618;
+
+        font-size: 27px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* TEKS PEMBAYARAN */
+
+    #pilihanPembayaran p {
+        color: #765f4c;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* TOMBOL METODE */
+
+    #pilihanPembayaran button {
+        min-width: 130px;
+
+        padding: 13px 22px;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        border-radius: 12px;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    #pilihanPembayaran button:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 18px rgba(59, 38, 24, 0.25);
+    }
+
+
+    /* TOMBOL X */
+
+    .tutup-pembayaran {
+        position: absolute;
+
+        top: 18px;
+        right: 18px;
+
+        width: 35px;
+        height: 35px;
+
+        padding: 0;
+        margin: 0;
+
+        border: none;
+        border-radius: 50%;
+
+        background: transparent !important;
+        color: #6b4226 !important;
+
+        font-size: 28px;
+        font-weight: bold;
+
+        line-height: 35px;
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .tutup-pembayaran:hover {
+        background: #f1e5d7 !important;
+
+        transform: rotate(90deg);
+    }
+
+
+    /* ANIMASI POPUP */
+
+    @keyframes popupModern {
+
+        from {
+            opacity: 0;
+            transform: translateY(15px) scale(0.96);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+    }
+
+    /* =========================================================
+   6. PAYMENT POPUP — MODERN WARKOP STYLE
+   ========================================================= */
+
+    #popupPembayaran {
+        background: rgba(35, 22, 14, 0.72);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    #popupPembayaran .popup-box {
+        position: relative;
+        width: min(430px, 90%);
+        padding: 40px 35px 35px;
+        border-radius: 24px;
+
+        background:
+            linear-gradient(145deg,
+                #fffdf9 0%,
+                #f8eee2 100%);
+
+        border: 1px solid rgba(107, 66, 38, 0.15);
+
+        box-shadow:
+            0 30px 80px rgba(35, 22, 14, 0.45),
+            0 8px 25px rgba(107, 66, 38, 0.18);
+
+        animation: paymentPopupIn 0.35s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    /* garis dekorasi atas */
+    #popupPembayaran .popup-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 12%;
+        width: 76%;
+        height: 4px;
+
+        background: linear-gradient(90deg,
+                #5a351f,
+                #b87943,
+                #5a351f);
+
+        border-radius: 0 0 10px 10px;
+    }
+
+    /* JUDUL */
+    #pilihanPembayaran h2 {
+        margin-top: 5px;
+        margin-bottom: 8px;
+
+        color: #3b2618;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    #pilihanPembayaran p {
+        color: #806b59;
+        margin-bottom: 28px;
+    }
+
+    /* tombol pembayaran */
+    #pilihanPembayaran button {
+        min-width: 145px;
+        margin: 6px;
+
+        padding: 14px 22px;
+
+        border-radius: 14px;
+
+        background: linear-gradient(135deg,
+                #5a351f,
+                #8a5732);
+
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+
+        box-shadow:
+            0 7px 16px rgba(90, 53, 31, 0.22);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            filter 0.2s ease;
+    }
+
+    #pilihanPembayaran button:hover {
+        transform: translateY(-4px);
+        filter: brightness(1.08);
+
+        box-shadow:
+            0 12px 24px rgba(90, 53, 31, 0.32);
+    }
+
+    #pilihanPembayaran button:active {
+        transform: translateY(-1px) scale(0.98);
+    }
+
+    /* tombol X */
+    .tutup-pembayaran {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        margin: 0;
+        padding: 0;
+
+        border-radius: 50%;
+
+        background: #f1e5d7 !important;
+        color: #6b4226 !important;
+
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 38px;
+
+        z-index: 10;
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .tutup-pembayaran:hover {
+        background: #e5d0ba !important;
+        transform: rotate(90deg) scale(1.08);
+    }
+
+
+    /* PROSES PEMBAYARAN */
+
+    #prosesPembayaran h2 {
+        margin-top: 20px;
+        color: #3b2618;
+    }
+
+    #prosesPembayaran p {
+        color: #806b59;
+        line-height: 1.6;
+    }
+
+
+    /* SUCCESS */
+
+    #pembayaranBerhasil h2 {
+        color: #3b2618;
+        margin-top: 15px;
+    }
+
+    #pembayaranBerhasil p {
+        color: #806b59;
+        line-height: 1.6;
+    }
+
+    #pembayaranBerhasil button {
+        margin-top: 20px;
+
+        padding: 13px 30px;
+
+        border-radius: 12px;
+
+        background: linear-gradient(135deg,
+                #5a351f,
+                #8a5732);
+
+        font-weight: bold;
+
+        box-shadow:
+            0 8px 18px rgba(90, 53, 31, 0.25);
+    }
+
+
+    /* animasi popup */
+
+    @keyframes paymentPopupIn {
+
+        from {
+            opacity: 0;
+            transform:
+                translateY(30px) scale(0.92);
+        }
+
+        to {
+            opacity: 1;
+            transform:
+                translateY(0) scale(1);
+        }
+
+    }
+
+
+    /* =========================================================
+   7. BACKGROUND — LEBIH WARKOP
+   ========================================================= */
+
+    body {
+
+        background:
+            radial-gradient(circle at 10% 15%,
+                rgba(137, 88, 50, 0.16),
+                transparent 28%),
+
+            radial-gradient(circle at 90% 25%,
+                rgba(107, 66, 38, 0.14),
+                transparent 30%),
+
+            radial-gradient(circle at 50% 100%,
+                rgba(180, 125, 75, 0.12),
+                transparent 35%),
+
+            linear-gradient(135deg,
+                #f8f1e8 0%,
+                #ead9c4 50%,
+                #f5eadd 100%);
+
+        background-attachment: fixed;
+    }
+
+
+    /* tekstur tipis ala kertas/kayu */
+
+    body::before {
+        content: "";
+
+        position: fixed;
+        inset: 0;
+
+        pointer-events: none;
+
+        opacity: 0.035;
+
+        background-image:
+            repeating-linear-gradient(0deg,
+                #3b2618 0px,
+                #3b2618 1px,
+                transparent 1px,
+                transparent 4px);
+
+        z-index: -1;
+    }
+
+
+    /* =========================================================
+   HEADER — BIAR NYAMBUNG SAMA BACKGROUND
+   ========================================================= */
+
+    header {
+
+        position: relative;
+        overflow: hidden;
+
+        padding: 45px 20px 42px;
+
+        background:
+            linear-gradient(135deg,
+                #28170d 0%,
+                #4b2b18 48%,
+                #754827 100%);
+
+        box-shadow:
+            0 10px 30px rgba(45, 27, 17, 0.28);
+    }
+
+
+    /* dekorasi kopi besar di kanan */
+
+    header::after {
+
+        content: "☕";
+
+        position: absolute;
+
+        right: 6%;
+        bottom: -45px;
+
+        font-size: 170px;
+
+        opacity: 0.07;
+
+        transform: rotate(-12deg);
+
+        pointer-events: none;
+    }
+
+
+    /* garis dekorasi */
+
+    header::before {
+
+        content: "";
+
+        position: absolute;
+
+        left: 50%;
+        bottom: 0;
+
+        width: 120px;
+        height: 4px;
+
+        transform: translateX(-50%);
+
+        background: #c18a5a;
+
+        border-radius: 10px;
+    }
+
+
+    header h1 {
+
+        position: relative;
+        z-index: 2;
+
+        font-size: 42px;
+
+        letter-spacing: 1px;
+
+        text-shadow:
+            0 3px 8px rgba(0, 0, 0, 0.25);
+    }
+
+
+    header p {
+
+        position: relative;
+        z-index: 2;
+
+        margin-top: 12px;
+
+        font-size: 17px;
+
+        opacity: 0.92;
+    }
+
+
+    /* =========================================================
+   KARTU MENU — SEDIKIT LEBIH "CAFE"
+   ========================================================= */
+
+    .card {
+
+        border: 1px solid rgba(107, 66, 38, 0.08);
+
+        box-shadow:
+            0 8px 25px rgba(75, 43, 24, 0.10);
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+
+        transform: translateY(-9px);
+
+        box-shadow:
+            0 18px 35px rgba(75, 43, 24, 0.18);
+    }
+
+    /* =========================
+   FOOTER WASIBU
+   ========================= */
+
+    footer {
+        margin-top: 60px;
+        padding: 35px 20px 25px;
+        text-align: center;
+
+        background: linear-gradient(135deg, #2d1b11, #5a351f);
+
+        color: white;
+
+        border-top: 5px solid #c18a5a;
+
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.20);
+    }
+
+    footer h3 {
+        margin: 0 0 15px;
+        font-size: 23px;
+        color: white;
+    }
+
+    footer p {
+        margin: 8px 0;
+        color: #eadbc9;
+        font-size: 14px;
+    }
+
+    footer small {
+        display: block;
+        margin-top: 20px;
+        padding-top: 15px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+        color: #cdbba8;
+        font-size: 12px;
+    }
+
+    /* =========================
+   HEADER - DINDING KAYU WARKOP
+   ========================= */
+
+    header {
+        position: relative;
+        overflow: hidden;
+
+        background:
+            /* cahaya hangat */
+            radial-gradient(circle at 50% 30%,
+                rgba(255, 220, 170, 0.12),
+                transparent 45%),
+
+            /* serat kayu horizontal */
+            repeating-linear-gradient(0deg,
+                rgba(40, 20, 10, 0.20) 0px,
+                rgba(40, 20, 10, 0.20) 2px,
+                transparent 2px,
+                transparent 18px),
+
+            /* warna papan kayu */
+            linear-gradient(90deg,
+                #2b180d 0%,
+                #4a2917 25%,
+                #60391f 50%,
+                #492717 75%,
+                #29170d 100%);
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Garis sambungan papan kayu */
+    header::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+            repeating-linear-gradient(90deg,
+                transparent 0px,
+                transparent 180px,
+                rgba(20, 10, 5, 0.18) 180px,
+                rgba(20, 10, 5, 0.18) 184px);
+
+        pointer-events: none;
+    }
+
+    /* Ornamen kopi samar */
+    header::after {
+        content: "☕";
+
+        position: absolute;
+        right: 7%;
+        bottom: -45px;
+
+        font-size: 160px;
+        opacity: 0.08;
+
+        transform: rotate(-12deg);
+
+        pointer-events: none;
+    }
+
+    /* Judul tetap di depan */
+    header h1,
+    header p {
+        position: relative;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Warung Si Bungsu | WASIBU</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         POPUP VIDEO PROMO
+    ========================== -->
+
+    <div id="popupPromo" class="popup-promo">
+
+        <div class="promo-box">
+
+            <button type="button" class="tutup-promo" onclick="
+                    document.getElementById('popupPromo').style.display='none';
+                    document.getElementById('videoPromo').pause();
+                ">
+                ×
+            </button>
+
+
+            <h2>
+                🔥 PROMO WASIBU 🔥
+            </h2>
+
+
+            <video id="videoPromo" controls loop>
+                <source src="video/promo.mp4" type="video/mp4">
+            </video>
+
+
+            <p>
+                Nongkrong hemat, harga bersahabat!
+            </p>
+
+
+            <button type="button" class="lihat-menu" onclick="
+                    document.getElementById('popupPromo').style.display='none';
+                    document.getElementById('videoPromo').pause();
+                ">
+                Lihat Menu
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <header style="
+    position: relative;
+    overflow: hidden;
+    padding: 45px 20px;
+    text-align: center;
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,220,170,0.12), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,220,170,0.10), transparent 25%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(30,15,7,0.20) 0px,
+            rgba(30,15,7,0.20) 2px,
+            transparent 2px,
+            transparent 18px
+        ),
+        linear-gradient(
+            90deg,
+            #29170c 0%,
+            #4b2917 25%,
+            #63391f 50%,
+            #4b2917 75%,
+            #29170c 100%
+        );
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.30);
+">
+
+            <!-- Ornamen kiri -->
+            <div style="
+        position:absolute;
+        left:7%;
+        top:50%;
+        transform:translateY(-50%) rotate(-12deg);
+        font-size:100px;
+        opacity:0.08;
+        pointer-events:none;
+    ">
+                ☕
+            </div>
+
+            <!-- Ornamen kanan -->
+            <div style="
+        position:absolute;
+        right:7%;
+        top:50%;
+        transform:translateY(-50%) rotate(12deg);
+        font-size:120px;
+        opacity:0.08;
+        pointer-events:none;
+    ">
+                ☕
+            </div>
+
+            <!-- Isi header -->
+            <div style="position:relative; z-index:2;">
+                <h1 style="
+            margin:0;
+            font-size:42px;
+            text-shadow:0 3px 8px rgba(0,0,0,0.30);
+        ">
+                    ☕ WARUNG SI BUNGSU
+                </h1>
+
+                <p style="
+            margin-top:12px;
+            font-size:17px;
+            opacity:0.92;
+        ">
+                    WASIBU — Tempat nongkrong mahasiswa UNINDRA
+                </p>
+            </div>
+
+        </header>
+
+    </header>
+
+
+
+    <!-- =========================
+         BANNER PROMO
+    ========================== -->
+
+    <section class="promo-banner">
+
+        <div class="promo-text">
+
+            <span class="promo-label">
+                🔥 PROMO SPESIAL HARI INI
+            </span>
+
+
+            <h2>
+                DISKON 10%
+            </h2>
+
+
+            <p>
+                Nikmati semua menu WASIBU
+                dengan harga lebih hemat!
+            </p>
+
+
+            <small>
+                *Diskon otomatis saat checkout
+            </small>
+
+        </div>
+
+
+        <div class="promo-icon">
+            ☕
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu">
+
+        <h2>
+            Menu Kami
+        </h2>
+
+
+
+        <!-- =========================
+             PILIH KATEGORI
+        ========================== -->
+
+        <div class="kategori">
+
+            <button type="button" onclick="tampilkanKategori('makanan')">
+                🍜 Makanan
+            </button>
+
+
+            <button type="button" onclick="tampilkanKategori('minuman')">
+                🥤 Minuman
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             PRODUK
+             Card dibuat otomatis oleh JS
+        ========================== -->
+
+        <div class="menu-container">
+
+            <div id="menuMakanan" class="menu-item">
+            </div>
+
+
+            <div id="menuMinuman" class="menu-item">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         KERANJANG
+    ========================== -->
+
+    <section class="keranjang">
+
+        <h2>
+            🛒 Keranjang
+        </h2>
+
+
+        <div id="daftarKeranjang">
+
+            <p>
+                Belum ada pesanan.
+            </p>
+
+        </div>
+
+
+
+        <!-- RINGKASAN HARGA -->
+
+        <div class="ringkasan-harga">
+
+
+            <div class="baris-harga">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+
+            <div class="baris-harga diskon">
+
+                <span>
+                    Diskon 10%
+                </span>
+
+                <strong id="diskon">
+                    -Rp0
+                </strong>
+
+            </div>
+
+
+
+            <div class="garis-total"></div>
+
+
+
+            <div class="baris-harga total-bayar">
+
+                <span>
+                    Total Bayar
+                </span>
+
+                <strong id="total">
+                    Rp0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <button type="button" onclick="bayar()">
+            Bayar Sekarang
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================
+         POPUP PEMBAYARAN
+    ========================== -->
+
+    <div id="popupPembayaran" class="popup">
+
+        <div class="popup-box">
+
+            <button type="button" class="tutup-pembayaran" onclick="tutupPilihanPembayaran()">
+                ×
+            </button>
+
+
+            <!-- PILIH METODE PEMBAYARAN -->
+
+            <div id="pilihanPembayaran">
+
+                <h2>
+                    Pilih Metode Pembayaran
+                </h2>
+
+                <p>
+                    Silakan pilih metode pembayaran
+                </p>
+
+
+                <button type="button" onclick="pilihPembayaran('Tunai')">
+                    💵 Tunai
+                </button>
+
+
+                <button type="button" onclick="pilihPembayaran('QRIS')">
+                    📱 QRIS
+                </button>
+
+            </div>
+
+
+
+            <!-- PROSES PEMBAYARAN -->
+
+            <div id="prosesPembayaran" style="display: none;">
+
+                <div class="loading-circle"></div>
+
+
+                <h2>
+                    Silakan ke kasir
+                </h2>
+
+
+                <p id="teksProsesPembayaran">
+                    Silakan ke kasir untuk melakukan pembayaran.
+                </p>
+
+            </div>
+
+
+
+            <!-- BERHASIL -->
+
+            <div id="pembayaranBerhasil" style="display: none;">
+
+                <div class="checkmark">
+                    ✓
+                </div>
+
+
+                <h2>
+                    Pembayaran Berhasil!
+                </h2>
+
+
+                <p>
+                    Terima kasih sudah membeli
+                    di Warung Si Bungsu ☕
+                </p>
+
+
+                <button type="button" onclick="tutupPembayaran()">
+                    Selesai
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         AUDIO PEMBAYARAN
+    ========================== -->
+
+    <audio id="audioSukses">
+
+        <source src="audio/sukses.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="./script.js"></script>
+
+    <footer style="
+    margin-top: 60px;
+    padding: 35px 20px 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #2d1b11, #5a351f);
+    color: white;
+    border-top: 5px solid #c18a5a;
+    box-shadow: 0 -8px 25px rgba(0,0,0,0.20);
+">
+
+        <h3 style="
+        margin: 0 0 15px;
+        font-size: 23px;
+        color: white;
+    ">
+            ☕ WARUNG SI BUNGSU
+        </h3>
+
+        <p style="
+        margin: 8px 0;
+        color: #eadbc9;
+        font-size: 14px;
+    ">
+            📍 Gg. Remaja 2 Blok Remaja 2
+            No.16, RT.6/RW.3, Gedong, Kec. Ps. Rebo
+            Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13760
+        </p>
+
+        <p style="
+        margin: 8px 0;
+        color: #eadbc9;
+        font-size: 14px;
+    ">
+            📞 085211894007
+        </p>
+
+        <p style="
+        margin: 8px 0;
+        color: #eadbc9;
+        font-size: 14px;
+    ">
+            🕐 Buka setiap hari · 08.00–22.00
+        </p>
+
+        <small style="
+        display: block;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        color: #cdbba8;
+        font-size: 12px;
+    ">
+            © 2026 WASIBU — Tempat Nongkrong Mahasiswa UNINDRA
+        </small>
+
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./fitur final.js"></script>
+
+</body>
+
+</html>
