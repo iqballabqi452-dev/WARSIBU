@@ -282,7 +282,10 @@
             if (item.teh) {
                 detail += " · " + item.rasaTeh;
             }
-
+            if (item.catatan && item.catatan.trim() !== "") {
+                detail += " · Catatan: " + item.catatan;
+            }
+            
             daftarItem += `
                 <div class="struk-item-wasibu">
                     <strong>${item.nama}</strong>
