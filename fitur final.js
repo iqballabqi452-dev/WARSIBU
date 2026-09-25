@@ -162,6 +162,7 @@
             }
         }
     `;
+
     document.head.appendChild(style);
 
     // =============================
@@ -230,7 +231,82 @@
     // =============================
     let metodePembayaranTerakhir = "Tunai";
 
+    // =============================
+    // PILIHAN DINE IN / TAKE AWAY
+    // =============================
+
+    let jenisPesananTerakhir = "";
+
+    let bayarAsli = bayar;
+
+    let pilihanPembayaranAsliHTML = null;
+
+    bayar = function () {
+
+        // Jalankan fungsi bayar asli
+        bayarAsli();
+
+        const pilihan = document.getElementById("pilihanPembayaran");
+
+        if (!pilihan) return;
+
+        // Simpan tampilan pilihan pembayaran asli
+        if (pilihanPembayaranAsliHTML === null) {
+            pilihanPembayaranAsliHTML = pilihan.innerHTML;
+        }
+
+        // Tampilkan pilihan Dine In / Take Away
+        pilihan.innerHTML = `
+        <div class="pilihan-jenis-pesanan-wasibu">
+
+            <h2>
+                Pilih Jenis Pesanan
+            </h2>
+
+            <p>
+                Pesanan ini untuk makan di tempat atau dibawa pulang?
+            </p>
+
+            <div class="tombol-jenis-pesanan-wasibu">
+
+                <button
+                    type="button"
+                    onclick="pilihJenisPesanan('Dine In')"
+                >
+                    🍽️ Dine In
+                </button>
+
+                <button
+                    type="button"
+                    onclick="pilihJenisPesanan('Take Away')"
+                >
+                    🥡 Take Away
+                </button>
+
+            </div>
+
+        </div>
+    `;
+    };
+
     const pilihPembayaranAsli = pilihPembayaran;
+
+    // =============================
+    // PILIH JENIS PESANAN
+    // =============================
+
+    window.pilihJenisPesanan = function (jenis) {
+
+        jenisPesananTerakhir = jenis;
+
+        const pilihan = document.getElementById("pilihanPembayaran");
+
+        if (!pilihan) return;
+
+        // Kembalikan pilihan pembayaran
+        pilihan.innerHTML = pilihanPembayaranAsliHTML;
+
+    };
 
     pilihPembayaran = function (metode) {
         metodePembayaranTerakhir = metode;
@@ -285,7 +361,7 @@
             if (item.catatan && item.catatan.trim() !== "") {
                 detail += " · Catatan: " + item.catatan;
             }
-            
+
             daftarItem += `
                 <div class="struk-item-wasibu">
                     <strong>${item.nama}</strong>
@@ -325,6 +401,12 @@
                     <div class="struk-baris-wasibu">
                         <span>Pembayaran</span>
                         <strong>${metode}</strong>
+                    </div>
+
+                    <div class="struk-baris-wasibu">
+                    <span>Jenis Pesanan</span>
+                    <strong>${jenisPesananTerakhir}</strong>
+
                     </div>
                 </div>
 
